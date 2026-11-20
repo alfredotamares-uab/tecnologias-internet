@@ -29,6 +29,10 @@ yarn-error.log
 !.vscode/mcp.json
 .history/*
 
+# Assistant configuration
+/.codex/
+/.gemini/
+
 # Miscellaneous
 /.angular/cache
 .sass-cache/
