@@ -1,0 +1,146 @@
+.catalogo {
+  max-width: 68rem;
+  margin-inline: auto;
+  padding: clamp(1rem, 4vw, 3.5rem);
+}
+
+.tienda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  border-bottom: 1px solid #d6c8bf;
+  padding-bottom: 1.25rem;
+}
+
+h1,
+h2,
+p,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+.ficha h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  line-height: 1.13;
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.sucursal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-top: 0.6rem;
+  color: #6c5143;
+}
+
+.sucursal div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.sucursal dd {
+  color: #29201c;
+  font-weight: 600;
+}
+
+.estado {
+  justify-self: start;
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  background-color: #e6efe6;
+  color: #24533a;
+  font-size: 0.9375rem;
+  font-weight: 650;
+}
+
+.estado-inactivo {
+  background-color: #f6e5df;
+  color: #7d3627;
+}
+
+.producto {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid #d6c8bf;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #fffdf9;
+}
+
+.foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background-color: #dfac97;
+}
+
+.ficha {
+  display: grid;
+  align-content: center;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 5vw, 4.5rem);
+}
+
+.ficha h2 {
+  font-size: clamp(2rem, 4.8vw, 3.75rem);
+}
+
+.precio dt {
+  color: #6c5143;
+}
+
+.precio dd {
+  color: #8b3b29;
+  font-size: 1.7rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.categorias {
+  margin-top: 1.75rem;
+  padding: 1.25rem 0;
+}
+
+.categorias h2 {
+  font-size: 1.25rem;
+}
+
+.categorias ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block: 0.7rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.categorias li {
+  border: 1px solid #d6c8bf;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  background: #fffdf9;
+}
+
+@media (max-width: 42rem) {
+  .producto {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .foto {
+    height: auto;
+  }
+}
