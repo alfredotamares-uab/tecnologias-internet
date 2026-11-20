@@ -1,59 +1,39 @@
-# TecnologiasInternet
+# Práctica Angular: presentación de un producto
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.3.0.
+Papel y Tinta es una papelería de ejemplo. La página presenta un cuaderno terracota con su precio en bolivianos, la disponibilidad del producto, los datos de la sucursal y las categorías de la tienda.
 
-## Development server
+## Ver la página
 
-To start a local development server, run:
-
-```bash
-ng serve
+```powershell
+npm ci
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abre [http://localhost:4200](http://localhost:4200).
 
-## Code scaffolding
+## Comprobar los cambios
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+En `src/app/app.ts`, haz estos cambios con el servidor en marcha. Guarda y observa el resultado.
 
-```bash
-ng generate component component-name
-```
+| Cambio | Resultado en la página |
+| --- | --- |
+| Cambiar `tiendaAbierta` a `false`. | Aparece «Tienda cerrada». |
+| Cambiar `producto.disponible` a `false`. | Aparece «Producto agotado». |
+| Agregar `'Accesorios'` al arreglo `categorias`. | Aparece una cuarta categoría. |
+| Cambiar el nombre a `'Cuaderno Terracota A5'` y el precio a `55`. | Aparecen el nuevo nombre y «Bs 55». |
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Puedes volver a los valores iniciales al terminar. Las pruebas que se ejecutan con `npm test -- --watch=false` comprueban los valores iniciales y la variante con los cuatro cambios.
 
-```bash
-ng generate --help
-```
+## Respuestas
 
-## Building
+1. **¿Qué función cumple `@Component`?** Le indica a Angular que la clase `App` es un componente. Ahí se configura su selector, su plantilla, sus estilos y las dependencias que usa la plantilla.
+2. **¿Para qué sirve la interfaz `Producto`?** Define qué datos debe tener un producto y el tipo de cada dato. TypeScript puede avisarme si, por ejemplo, escribo el precio como texto o si olvido indicar la disponibilidad.
+3. **¿Qué hace `{{ }}`?** Muestra el valor de una expresión de Angular como texto en el HTML. Por ejemplo, `{{ producto.nombre }}` muestra el nombre guardado en el objeto.
+4. **¿Qué diferencia existe entre `@if` y `@for`?** Uso `@if` para decidir qué mostrar según una condición, como el estado de la tienda. Uso `@for` para repetir un elemento por cada valor de una lista, como cada categoría.
+5. **¿Por qué `tiendaAbierta` utiliza el tipo `boolean`?** Porque solo representa dos estados. `true` significa que la tienda está abierta y `false` que está cerrada.
 
-To build the project run:
+## Imagen del producto
 
-```bash
-ng build
-```
+La foto de `public/cuaderno-terracota.jpg` se creó con el generador de imágenes integrado.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+> Fotografía de catálogo cuadrada de un solo cuaderno A5 de tapa dura color terracota mate, esquinas redondeadas, banda elástica a tono y bordes de papel crema. Visto desde arriba con un leve ángulo, centrado entero sobre una superficie rosa arcilla con luz natural lateral y sombras suaves. Textura de papel y tela visible, sin texto, logos ni otros objetos.
